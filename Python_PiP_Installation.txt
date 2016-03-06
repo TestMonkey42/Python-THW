@@ -1,0 +1,3 @@
+Setuptools - http://pypi.python.org/pypi/setuptools#windows
+Pip - http://www.pip-installer.org/en/latest/installing.html
+Selenium - Python Client Driver -http://pypi.python.org/pypi/selenium

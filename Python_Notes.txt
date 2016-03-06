@@ -1,0 +1,98 @@
+
+How does % work?
+    Another way to say it is, "X divided by Y with J remaining." As in, "100 divided by 16 with 4 remaining." The result of % is the J part, or the remaining part.
+What is the order of operations?
+    In the US we use an acronym called PEMDAS which stands for Parentheses Exponents Multiplication Division Addition Subtraction. That's the order Python follows as well.
+Why does / (divide) round down?
+    It's not really rounding down, it's just dropping the fractional part after the decimal. Try doing 7.0 / 4.0 and compare it to 7 / 4 and you'll see the difference.
+
+==================
+	
+print """
+allows printing of many lines.
+"""
+==================
+	
+Escape 	What it does.
+\\ 	Backslash ()
+\' 	Single quote (')
+\" 	Double quote (")
+\a 	ASCII Bell (BEL)
+\b 	ASCII Backspace (BS)
+\f 	ASCII Formfeed (FF)
+\n 	ASCII Linefeed (LF)
+\N{name} 	Character named name in the Unicode database (Unicode only)
+\r ASCII 	Carriage Return (CR)
+\t ASCII 	Horizontal Tab (TAB)
+\uxxxx 	Character with 16-bit hex value xxxx (Unicode only)
+\Uxxxxxxxx 	Character with 32-bit hex value xxxxxxxx (Unicode only)
+\v 	ASCII Vertical Tab (VT)
+\ooo 	Character with octal value ooo
+\xhh 	Character with hex value hh
+
+==================
+In Terminal where you normally run python to run your scripts, type: pydoc raw_input. Read what it says. If you're on Windows try python -m pydoc raw_input instead.
+
+Use pydoc to also read about open, file, os, and sys.
+
+==================
+lesson 13
+
+Parameters, unpacking and variables
+
+from sys import argv
+script, first, second, third = argv
+
+The argv is the "argument variable"
+
+==================
+EX15: Opening, Reading, Writing Files
+
+# Open the file (filename) and assign txt variable the file object
+txt = open(filename)
+print txt.read()
+
+Other file mehods to remember:
+    close -- Closes the file. Like File->Save.. in your editor.
+    read -- Reads the contents of the file, you can assign the result to a variable.
+    readline -- Reads just one line of a text file.
+    truncate -- Empties the file, watch out if you care about the file.
+    write(stuff) -- Writes stuff to the file.
+
+open(filename) opens it in read mode ('r')
+open(filename, 'w') to write to it
+
+What are the modifiers to the file modes we can use?
+    The most important one to know for now is the + modifier, so you can do 'w+', 'r+', and 'a+'. This will open the file in both read and write mode, and depending on the character use position the file in different ways.
+	
+w - write (I think this truncates the file)
+r - read
+a - append?
+
+==================
+EX17
+
+Cat - Con-Cat-Enates files together. Also a way to print a file's contents to the screen.
+In Windows use "type".
+
+# copy one file to another
+from sys import argv
+from os.path import exists
+script, from_file, to_file = argv
+in_file = open(from_file).read()
+out_file = open(to_file, 'w').write(in_file)
+===================
+
+18: Names, Variables, Code, Functions
+
+Functions do three things:
+    They name pieces of code the way variables name strings and numbers.
+    They take arguments the way your scripts take argv.
+    Using #1 and #2 they let you make your own "mini scripts" or "tiny commands".
+
+===================
+EX 25
+
+rather than type "ex25." in each line, use:
+from ex25 import *
+
